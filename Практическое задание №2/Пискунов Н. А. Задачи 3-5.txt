@@ -1,0 +1,94 @@
+Задание 3
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+
+    cout << "Enter A (0 or 1): "; 
+    cin >> a;
+
+    if (a == 0) {
+        b = 2;
+    }
+    else {
+        b = 1;
+    }
+
+    cout << "B = " << b << endl;
+
+    return 0;
+}
+
+
+Задание 4
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int a, b;
+    cout << "Введите a и b: ";
+    cin >> a >> b;
+
+    vector<int> A(a), B(b);
+
+    cout << "Введите " << a << " элементов массива A (по возрастанию): ";
+    for (int i = 0; i < a; ++i) cin >> A[i];
+
+    cout << "Введите " << b << " элементов массива B (по возрастанию): ";
+    for (int i = 0; i < b; ++i) cin >> B[i];
+
+    int i = 0;
+    int j = 0;
+
+    cout << "Объединённый массив в порядке возрастания: ";
+
+    for (int Sch = 1; Sch <= a + b; ++Sch) {
+        if (i < a && (j >= b || A[i] <= B[j])) {
+            cout << A[i] << " ";
+            ++i;
+        } else {
+            cout << B[j] << " ";
+            ++j;
+        }
+    }
+
+    cout << endl;
+    return 0;
+}
+
+Задание 5
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    vector<int> arr(n);
+
+    cout << "Введите " << n << " различных чисел от 0 до " << n << ": ";
+    for (int i = 0; i < n; ++i) {
+        cin >> arr[i];
+    }
+
+    int total = n * (n + 1) / 2;
+
+    int sum = 0;
+    for (int Sch = 0; Sch < n; ++Sch) {
+        sum += arr[Sch];
+    }
+
+    int missing = total - sum;
+
+    cout << "Недостающее число j = " << missing << endl;
+
+    return 0;
+}
