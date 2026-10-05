@@ -2,7 +2,7 @@
 #include <cmath>
 
 // Вывод корня квадратного многочлена ax^2 + bx + c
-void printRoots(double a, double b, double c) {
+void Kvadrat(double a, double b, double c) {
     // Расчёт дискриминанта
     if (a == 0) {
         if (b == 0 && c == 0) {
@@ -35,7 +35,7 @@ void printRoots(double a, double b, double c) {
 
 // Запрашивает радиус круга и сторону квадрата, сравнивает их площади
 
-void compareAreas() {
+void Areas() {
     double radius = 0.0;
     double side = 0.0;
 
@@ -83,10 +83,10 @@ int main() {
     std::cout << "Piskunov Nikolay\n"; // Вывод фамилии и имени
     } 
     else if (command == 'c') {
-        printRoots(a, b, c); // Вывод корней квадратного многочлена
+        Kvadrat(a, b, c); // Вывод корней квадратного многочлена
     } 
     else if (command == 's') {
-        compareAreas(); // Сравнение площадей фигур
+        Areas(); // Сравнение площадей фигур
     } 
     else {
         std::cout << "Неизвестная команда\n";
